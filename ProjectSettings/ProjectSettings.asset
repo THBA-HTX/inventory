@@ -682,11 +682,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 1
-  cloudProjectId: 
+  cloudProjectId: 0986cdf0-aeec-4321-906f-b8c8c3f6f819
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: InventoryDemo
+  organizationId: abildgaardo
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

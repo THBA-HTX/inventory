@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Inventory { 
 
-    public List<Item> itemList;
+    public List<ItemData> itemList;
 
     public Inventory() {
 
-        itemList = new List<Item>();
+        itemList = new List<ItemData>();
 
-        AddItem(new Item { itemType = Item.ItemType.Sword, amount = 1 } );
-        AddItem(new Item { itemType = Item.ItemType.ManaPotion, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Medkit, amount = 1 });
         Debug.Log("Inventory: " + itemList.Count );
     }
 
-    public void AddItem(Item item) {
+    public bool AddItem(ItemData item) {
         itemList.Add(item);
+        return true;
     
     }
 
-    public List<Item> GetItemList() {
+    public List<ItemData> GetItemList() {
         return itemList;
     }
 

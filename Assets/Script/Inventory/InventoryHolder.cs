@@ -12,4 +12,8 @@ public class InventoryHolder : MonoBehaviour
         inventoryGUI.SetInventory(inventory);
     }
 
+    public Inventory GetInventory() {
+        return inventory;
+    }
+
 }
