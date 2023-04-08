@@ -10,6 +10,12 @@ public class Inventory {
 
         itemList = new List<ItemData>();
 
+        itemList.Add( ScriptableObject.CreateInstance<ItemData>() ); 
+        itemList.Add(ScriptableObject.CreateInstance<ItemData>()); 
+        itemList.Add(ScriptableObject.CreateInstance<ItemData>()); 
+        itemList.Add(ScriptableObject.CreateInstance<ItemData>()); 
+        itemList.Add(ScriptableObject.CreateInstance<ItemData>()); 
+
         Debug.Log("Inventory: " + itemList.Count );
     }
 

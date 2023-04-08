@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnMove(InputValue movementValue)
+/*    void OnMove(InputValue movementValue)
     {
         Debug.Log("Event OnMove");
         movementInput = movementValue.Get<Vector2>();
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Event OnFire");
         //animator.SetTrigger("swordAttack");
-    }
+    }*/
 
  /*   public void SwordAttack()
     {

@@ -13,8 +13,9 @@ public class InventoryGUI : MonoBehaviour
 
     public void Awake()
     {
-        itemSlotContainer = transform.Find("itemSlotContainer");
-        itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+        // Find GUI elements and update them
+       // itemSlotContainer = transform.Find("itemSlotContainer");
+        //itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
     }
 
     public void SetInventory(Inventory inv) {
