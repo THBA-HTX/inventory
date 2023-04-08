@@ -19,12 +19,13 @@ public class ItemPickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Pickup Collision");
         var inventory = other.transform.GetComponent<InventoryHolder>();
         if (inventory == null)
             return;
-
+        Debug.Log("Pickup Collision");
         if (inventory.GetInventory().AddItem(itemData))
         {
             Destroy(this);

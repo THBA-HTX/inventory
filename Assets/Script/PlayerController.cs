@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-//using UnityEngine.InputSystem.Utilities;
-
 
 // Takes and handles input and movement for a player character
 public class PlayerController : MonoBehaviour

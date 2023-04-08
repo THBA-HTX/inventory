@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1626932826198795471
 SpriteRenderer:
@@ -124,7 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47b3b189d0076f4aaf11a1e44077766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRadius: 1
-  itemData: {fileID: 11400000, guid: 34546760a78eeb143b3b9e81cf522f6b, type: 2}
-  collider2: {fileID: 1626932826198795468}
-  sp: {fileID: 0}
+  itemData: {fileID: 0}

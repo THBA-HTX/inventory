@@ -20,6 +20,7 @@ public class Inventory {
     }
 
     public bool AddItem(ItemData item) {
+        Debug.Log("Item added to inventory..");
         itemList.Add(item);
         return true;
     
