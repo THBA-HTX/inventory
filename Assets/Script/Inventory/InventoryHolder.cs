@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class InventoryHolder : MonoBehaviour
 {
-    [SerializeField] private Inventory inventory;
+    [SerializeField] public Inventory inventory;
     [SerializeField] private InventoryGUI inventoryGUI;
 
     public void Awake() {
         inventory = new Inventory();
+       
+
         inventoryGUI.SetInventory(inventory);
     }
 

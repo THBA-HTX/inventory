@@ -7,41 +7,70 @@ public class InventoryGUI : MonoBehaviour
 {
 
     private Inventory inventory;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    private Transform inventoryGUI;
+    private GameObject inventoryGrid;
+    public GameObject itemSlotPrefab;
 
 
     public void Awake()
     {
-        // Find GUI elements and update them
-       // itemSlotContainer = transform.Find("itemSlotContainer");
-        //itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+       inventoryGrid = GameObject.Find("GridBg");
+    }
+
+    public void OnEnable()
+    {
+        Inventory.OnInventoryHasChanged += RefreshInventoryItems;
+    }
+
+    public void OnDisable()
+    {
+        Inventory.OnInventoryHasChanged -= RefreshInventoryItems;
     }
 
     public void SetInventory(Inventory inv) {
         inventory = inv;
-        RefreshInventoryItems();
+        if (inventory != null )
+            Debug.Log("Iventory found");
+        //RefreshInventoryItems();
     }
     
     
     public void RefreshInventoryItems() {
+
+        Debug.Log("RefreshAction was evoked");
+
         int x = 0;
         int y = 0;
-        float itemSlotCellSize = 20f;
+        //float itemSlotCellSize = 20f;
         int numColumns = 4;
         //int numRows = 2;
+        //Debug.Log("Counting children of Grid: " + inventoryGrid.transform.childCount);
+        // GameObject[] allChildren = inventoryGrid.GetComponentsInChildren<GameObject>();
+        //Debug.Log("Counting children of Grid array: " + allChildren.Length);
+
+        foreach (Transform child in inventoryGrid.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
 
         foreach (var item in inventory.GetItemList())
-        { 
-            Instantiate(itemSlotTemplate, itemSlotContainer);
-        
-            //Object obj = Instantiate(itemSlotTemplate, itemSlotContainer);
-            RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
-            itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+        {
+            GameObject obj = Instantiate(itemSlotPrefab, inventoryGrid.transform);
+            obj.SetActive(true);
 
-            Image image = itemSlotRectTransform.Find("image").GetComponent<Image>();
-            image.sprite = item.icon;
+            var itemIcon = obj.transform.Find("ItemImage").GetComponent<Image>();
+            itemIcon.enabled = true;
+            itemIcon.sprite = item.icon;
+            //GameObject child = originalGameObject.transform.GetChild(0).gameObject;
+            // RectTransform itemSlotRectTransform = allChildren[x];
+
+
+            /* RectTransform itemSlotRectTransform = Instantiate(itemSlotPrefab, inventoryGUI).GetComponent<RectTransform>();
+             itemSlotRectTransform.gameObject.SetActive(true);
+             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
+            */
+            //Image image = allChildren[x].GetComponent<Image>();
+            //image.sprite = item.icon;
 
             x++;
             if (x > numColumns) {

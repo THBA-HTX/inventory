@@ -28,7 +28,7 @@ public class ItemPickup : MonoBehaviour
         Debug.Log("Pickup Collision");
         if (inventory.GetInventory().AddItem(itemData))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
